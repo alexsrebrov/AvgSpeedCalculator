@@ -194,7 +194,7 @@
 
       const pad = (n) => String(n).padStart(2, '0');
       if (hours > 0) {
-        return `${pad(hours)}:${pad(minutes)}`;
+        return `${pad(hours)}:${pad(minutes):pad(seconds)}`;
       }
       return `${pad(minutes)}:${pad(seconds)}`;
     }
