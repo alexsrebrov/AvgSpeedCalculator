@@ -207,7 +207,7 @@
       const remaining = arrivalTimeMs - now;
 
       if (remaining <= 0) {
-        timeLeftDisplay.textContent = '00:00';
+        timeLeftDisplay.textContent = '00:00:00';
         clearInterval(countdownInterval);
         countdownInterval = null;
         return;
@@ -240,7 +240,8 @@
       const arrivalDate = new Date(arrivalTimeMs);
       const hours = String(arrivalDate.getHours()).padStart(2, '0');
       const mins = String(arrivalDate.getMinutes()).padStart(2, '0');
-      arrivalTimeDisplay.textContent = `${hours}:${mins}`;
+      const secs = String(arrivalDate.getSeconds()).padStart(2, '0');
+      arrivalTimeDisplay.textContent = `${hours}:${mins}:{secs}`;
 
       // Show results panel
       resultPanel.classList.add('active');
