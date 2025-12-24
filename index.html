@@ -194,7 +194,7 @@
 
       const pad = (n) => String(n).padStart(2, '0');
       if (hours > 0) {
-        return `${pad(hours)}:${pad(minutes):pad(seconds)}`;
+        return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
       }
       return `${pad(minutes)}:${pad(seconds)}`;
     }
@@ -236,7 +236,7 @@
       // Calculate arrival time
       arrivalTimeMs = Date.now() + timeNeededMs;
 
-      // Display arrival time (24-hour format without seconds)
+      // Display arrival time (24-hour format with seconds)
       const arrivalDate = new Date(arrivalTimeMs);
       const hours = String(arrivalDate.getHours()).padStart(2, '0');
       const mins = String(arrivalDate.getMinutes()).padStart(2, '0');
@@ -256,7 +256,7 @@
       countdownInterval = setInterval(updateTimeLeft, 1000);
     }
 
-    calculateBtn.addEventListener('click', onCalculate);
+    calculateBtn.addEventListener('click', calculate);
   </script>
 </body>
 </html>
